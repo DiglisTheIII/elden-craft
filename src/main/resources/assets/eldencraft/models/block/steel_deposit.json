@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "eldencraft:block/steel_deposit"
+  }
+
+}
