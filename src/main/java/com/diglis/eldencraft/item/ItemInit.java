@@ -19,6 +19,12 @@ public class ItemInit {
     public static final RegistryObject<Item> STEEL_INGOT = ITEMS.register("steel",
             () -> new Item(new Item.Properties().tab(tabs("ermisc"))));
 
+    public static final RegistryObject<Item> STEEL_CHUNK = ITEMS.register("steel_chunk",
+            () -> new Item(new Item.Properties().tab(tabs("ermisc"))));
+
+    public static final RegistryObject<Item> CARBON_SHARD = ITEMS.register("carbon_shard",
+            () -> new Item(new Item.Properties().tab(tabs("ermisc"))));
+
     public static final RegistryObject<SwordItem> BASTARD_SWORD = ITEMS.register("bastard_sword",
             () -> new SwordItem(Tiers.STEEL, 3, 3.5f, new Item.Properties().tab(tabs("erwpn"))));
     public static void register(IEventBus eventBus) {
@@ -26,16 +32,13 @@ public class ItemInit {
     }
 
     private static CreativeModeTab tabs(String prop) {
-        switch(prop) {
-            case "misc":
-                return CreativeModeTab.TAB_MISC;
-            case "ermisc":
-                return ModCreativeModeTab.ELDEN_CRAFT_MISC;
-            case "erwpn":
-                return ModCreativeModeTab.ELDEN_CRAFT_WEAPONS;
-            default:
-                return null;
-        }
+        return switch (prop) {
+            case "misc" -> CreativeModeTab.TAB_MISC;
+            case "ermisc" -> ModCreativeModeTab.ELDEN_CRAFT_MISC;
+            case "erwpn" -> ModCreativeModeTab.ELDEN_CRAFT_WEAPONS;
+            case "erarm" -> ModCreativeModeTab.ELDEN_CRAFT_ARMOR;
+            default -> null;
+        };
     }
 
     public static class Tiers {

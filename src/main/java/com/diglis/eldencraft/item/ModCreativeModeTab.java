@@ -22,7 +22,15 @@ public class ModCreativeModeTab {
         }
     };
 
-    public static final CreativeModeTab ELDEN_CRAFT_BLOCKS = new CreativeModeTab("eldencraftwpn") {
+    public static final CreativeModeTab ELDEN_CRAFT_ARMOR = new CreativeModeTab("eldencraftarmr") {
+
+        @Override
+        public ItemStack makeIcon() {
+            return new ItemStack(BlockInit.STEEL_DEPOSIT.get());
+        }
+    };
+
+    public static final CreativeModeTab ELDEN_CRAFT_BLOCKS = new CreativeModeTab("eldencraftblock") {
 
         @Override
         public ItemStack makeIcon() {

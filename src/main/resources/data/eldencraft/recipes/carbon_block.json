@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "eldencraft:carbon_shard"
+    }
+  },
+  "result": {
+    "item": "eldencraft:carbon_block",
+    "count": 1
+  }
+}

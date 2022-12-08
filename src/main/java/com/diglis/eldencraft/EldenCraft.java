@@ -2,6 +2,8 @@ package com.diglis.eldencraft;
 
 import com.diglis.eldencraft.block.BlockInit;
 import com.diglis.eldencraft.item.ItemInit;
+import com.diglis.eldencraft.world.feature.WorldGenFeature;
+import com.diglis.eldencraft.world.feature.WorldPlaceFeature;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.common.MinecraftForge;
@@ -29,6 +31,10 @@ public class EldenCraft
         ItemInit.register(modEventBus);
 
         BlockInit.register(modEventBus);
+
+        WorldGenFeature.register(modEventBus);
+
+        WorldPlaceFeature.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 

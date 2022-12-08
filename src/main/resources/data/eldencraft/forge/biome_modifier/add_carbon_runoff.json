@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_overworld",
+  "features": "eldencraft:carbon_runoff_placed",
+  "step": "underground_ores"
+}

@@ -14,7 +14,6 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-import java.rmi.registry.Registry;
 import java.util.function.Supplier;
 
 public class BlockInit {
@@ -22,9 +21,17 @@ public class BlockInit {
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, EldenCraft.MOD_ID);
 
+    public static final RegistryObject<Block> CARBON_BLOCK = registerBlock("carbon_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.GLASS).strength(0.2f)),
+            ModCreativeModeTab.ELDEN_CRAFT_BLOCKS);
+
     public static final RegistryObject<Block> STEEL_DEPOSIT = registerBlock("steel_deposit",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
-                    .strength(6f).requiresCorrectToolForDrops()), ModCreativeModeTab.ELDEN_CRAFT_BLOCKS);
+                    .strength(1.5f)), ModCreativeModeTab.ELDEN_CRAFT_BLOCKS);
+
+    public static final RegistryObject<Block> CARBON_RUNOFF = registerBlock("carbon_runoff",
+            () -> new Block(BlockBehaviour.Properties.of(Material.AMETHYST)
+                    .strength(0.5f)), ModCreativeModeTab.ELDEN_CRAFT_BLOCKS);
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
