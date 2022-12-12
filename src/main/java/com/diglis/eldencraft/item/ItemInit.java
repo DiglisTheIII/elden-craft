@@ -1,6 +1,8 @@
 package com.diglis.eldencraft.item;
 
 import com.diglis.eldencraft.EldenCraft;
+import com.diglis.eldencraft.item.custom.BastardSwordItem;
+import com.diglis.eldencraft.item.custom.MalikethSwordItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SwordItem;
@@ -16,19 +18,28 @@ public class ItemInit {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, EldenCraft.MOD_ID);
 
-    public static final RegistryObject<Item> STEEL_INGOT = ITEMS.register("steel",
-            () -> new Item(new Item.Properties().tab(tabs("ermisc"))));
+    public static final RegistryObject<Item> STEEL_INGOT = newItem("steel", "ermisc");
 
-    public static final RegistryObject<Item> STEEL_CHUNK = ITEMS.register("steel_chunk",
-            () -> new Item(new Item.Properties().tab(tabs("ermisc"))));
+    public static final RegistryObject<Item> STEEL_CHUNK = newItem("steel_chunk", "ermisc");
 
-    public static final RegistryObject<Item> CARBON_SHARD = ITEMS.register("carbon_shard",
-            () -> new Item(new Item.Properties().tab(tabs("ermisc"))));
+    public static final RegistryObject<Item> CARBON_SHARD = newItem("carbon_shard", "ermisc");
+
+    public static final RegistryObject<Item> LEATHER_STRIPS = newItem("leather_strips", "ermisc");
+
+    public static final RegistryObject<Item> SMITHING_STONE = newItem("smithing_stone", "ermisc");
 
     public static final RegistryObject<SwordItem> BASTARD_SWORD = ITEMS.register("bastard_sword",
-            () -> new SwordItem(Tiers.STEEL, 3, 3.5f, new Item.Properties().tab(tabs("erwpn"))));
+            () -> new BastardSwordItem(Tiers.STEEL, 3, 3.5f, new Item.Properties().tab(tabs("erwpn"))));
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
+    }
+
+    public static RegistryObject<Item> newItem(String id, String tab) {
+        return ITEMS.register(id, () -> new Item(new Item.Properties().tab(tabs(tab))));
+    }
+
+    public static RegistryObject<SwordItem> newSword(String id, String tab, Tier tier, int dmg, int uses) {
+        return ITEMS.register(id, () -> new SwordItem(tier, dmg, uses, new Item.Properties().tab(tabs(tab))));
     }
 
     private static CreativeModeTab tabs(String prop) {

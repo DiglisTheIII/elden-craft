@@ -3,10 +3,13 @@
   "item.eldencraft.bastard_sword": "Bastard Sword",
   "item.eldencraft.steel_chunk": "Steel Chunk",
   "item.eldencraft.carbon_shard": "Carbon Shard",
+  "item.eldencraft.leather_strips": "Leather Strips",
+  "item.eldencraft.smithing_stone": "Smithing Stone",
 
   "block.eldencraft.steel_deposit": "Steel Deposit",
   "block.eldencraft.carbon_runoff": "Carbon Runoff",
   "block.eldencraft.carbon_block": "Carbon Block",
+  "block.eldencraft.natural_geode": "Natural Geode",
 
   "itemGroup.eldencraftmisc": "Elden Craft: Misc",
   "itemGroup.eldencraftwpn": "Elden Craft: Weapons",

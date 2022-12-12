@@ -25,6 +25,12 @@ public class WorldPlaceFeature {
             () -> new PlacedFeature(WorldGenFeature.CARBON_RUNOFF.getHolder().get(),
                     commonOrePlacement(9,
                         HeightRangePlacement.triangle(VerticalAnchor.absolute(-63), VerticalAnchor.absolute(-34)))));
+
+    public static final RegistryObject<PlacedFeature> NATURAL_GEODE_PLACED = PLACED_FEATURES.register("natural_geode_placed",
+            () -> new PlacedFeature(WorldGenFeature.NATURAL_GEODE.getHolder().get(),
+                    commonOrePlacement(4,
+                            HeightRangePlacement.triangle(VerticalAnchor.absolute(6), VerticalAnchor.absolute(23)))));
+
     public static List<PlacementModifier> orePlacement(PlacementModifier p_195347_, PlacementModifier p_195348_) {
         return List.of(p_195347_, InSquarePlacement.spread(), p_195348_, BiomeFilter.biome());
     }

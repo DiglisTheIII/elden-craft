@@ -29,11 +29,18 @@ public class WorldGenFeature {
             OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, BlockInit.CARBON_RUNOFF.get().defaultBlockState())
     ));
 
+    public static final Supplier<List<OreConfiguration.TargetBlockState>> NATURAL_GEODES = Suppliers.memoize(() -> List.of(
+            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, BlockInit.NATURAL_GEODE.get().defaultBlockState())
+    ));
+
     public static final RegistryObject<ConfiguredFeature<?, ?>> STEEL_DEPOSIT = CONFIGURED_FEATURES.register("steel_deposit",
             () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(STEEL_DEPOSITS.get(), 12)));
 
     public static final RegistryObject<ConfiguredFeature<?, ?>> CARBON_RUNOFF = CONFIGURED_FEATURES.register("carbon_runoff",
             () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(CARBON_RUNOFFS.get(), 15)));
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> NATURAL_GEODE = CONFIGURED_FEATURES.register("natural_geode",
+            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(NATURAL_GEODES.get(), 15)));
     public static void register(IEventBus eventBus) {
         CONFIGURED_FEATURES.register(eventBus);
     }

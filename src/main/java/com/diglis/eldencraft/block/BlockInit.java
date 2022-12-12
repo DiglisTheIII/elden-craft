@@ -24,6 +24,9 @@ public class BlockInit {
     public static final RegistryObject<Block> CARBON_BLOCK = registerBlock("carbon_block",
             () -> new Block(BlockBehaviour.Properties.of(Material.GLASS).strength(0.2f)),
             ModCreativeModeTab.ELDEN_CRAFT_BLOCKS);
+    public static final RegistryObject<Block> NATURAL_GEODE = registerBlock("natural_geode",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(0.1f)),
+            ModCreativeModeTab.ELDEN_CRAFT_BLOCKS);
 
     public static final RegistryObject<Block> STEEL_DEPOSIT = registerBlock("steel_deposit",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
